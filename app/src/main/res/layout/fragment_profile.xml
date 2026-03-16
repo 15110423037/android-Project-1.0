@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.ProfileFragment"
+    android:orientation="vertical"
+    android:background="@color/bgColor">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/bgColor"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/lockImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="8dp"
+            android:scaleType="center"
+            android:src="@drawable/lock_24px" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/threadImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="8dp"
+            android:scaleType="center"
+            android:src="@drawable/threads_app" />
+
+        <ImageView
+            android:id="@+id/segmentImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="8dp"
+            android:layout_marginStart="8dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/segment_two_bar" />
+
+    </LinearLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
+        app:layout_constraintVertical_weight="1">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:background="@color/textMain"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="14dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent" />
+
+            <TextView
+                android:id="@+id/name"
+                style="@style/Base.Widget.AppCompat.TextView.TextMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sample_name"
+                android:textSize="24dp"
+                android:layout_marginStart="14dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/shapeableImageView2" />
+
+            <TextView
+                android:id="@+id/username"
+                style="@style/Base.Widget.AppCompat.TextView.TextMain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/sample_username"
+                app:layout_constraintStart_toStartOf="@+id/name"
+                app:layout_constraintTop_toBottomOf="@+id/name" />
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView7"-->
+<!--                style="@style/Base.Widget.AppCompat.TextView.TextMain"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:background="@drawable/corner_full"-->
+<!--                android:paddingHorizontal="12dp"-->
+<!--                android:paddingVertical="4dp"-->
+<!--                android:text="Thread-Clone"-->
+<!--                android:textColor="@color/textSec"-->
+<!--                android:textSize="11sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="@+id/username"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/username"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/username" />-->
+
+            <TextView
+                android:id="@+id/bio"
+                style="@style/Base.Widget.AppCompat.TextView.TextMain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:maxLength="200"
+                android:text="bio of the user."
+                android:textStyle="normal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/username"
+                app:layout_constraintTop_toBottomOf="@+id/username" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/textMain"
+                app:layout_constraintStart_toStartOf="@+id/bio"
+                app:layout_constraintTop_toBottomOf="@+id/bio"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                app:strokeColor="@color/bgColor"
+                app:strokeWidth="1dp"
+                android:padding="1dp" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/shapeableImageView4"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@color/textMain"
+                android:elevation="4dp"
+                android:translationX="-6dp"
+                app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView3"
+                app:layout_constraintStart_toEndOf="@+id/shapeableImageView3"
+                app:layout_constraintTop_toTopOf="@+id/shapeableImageView3"
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                app:strokeColor="@color/bgColor"
+                app:strokeWidth="1dp"
+                android:padding="1dp"/>
+
+            <TextView
+                android:id="@+id/followers"
+                style="@style/Base.Widget.AppCompat.TextView.TextSec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="16 followers"
+                app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView4"
+                app:layout_constraintStart_toEndOf="@+id/shapeableImageView4"
+                app:layout_constraintTop_toTopOf="@+id/shapeableImageView4" />
+
+            <TextView
+                android:id="@+id/addedLink"
+                style="@style/Base.Widget.AppCompat.TextView.TextSec"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:focusable="true"
+                android:text="• github.com/15110423037"
+                android:linksClickable="true"
+                android:clickable="true"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/followers"
+                app:layout_constraintStart_toEndOf="@+id/followers"
+                app:layout_constraintTop_toTopOf="@+id/followers" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginHorizontal="14dp"
+                android:paddingHorizontal="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/followers">
+
+                <TextView
+                    android:id="@+id/edit_profile"
+                    style="@style/Base.Widget.AppCompat.TextView.TextMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp"
+                    android:text="Edit Profile" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="4dp" />
+
+                <TextView
+                    android:id="@+id/share_profile"
+                    style="@style/Base.Widget.AppCompat.TextView.TextMain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:paddingHorizontal="12dp"
+                    android:paddingVertical="8dp"
+                    android:text="Share Profile" />
+
+            </LinearLayout>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/bgColor"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout6"
+                app:tabBackground="@color/bgColor"
+                app:tabIndicatorColor="@color/textMain"
+                app:tabIndicatorFullWidth="true"
+                app:tabSelectedTextColor="@color/textMain"
+                app:tabTextColor="@color/textSec">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Threads" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Replies" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Reposts" />
+
+            </com.google.android.material.tabs.TabLayout>
+
+            <include
+                layout="@layout/layout_divider"
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+
+<!--            <LinearLayout-->
+<!--                android:id="@+id/setup_layout"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:paddingVertical="12dp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/divider">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_vertical">-->
+
+<!--                    <TextView-->
+<!--                        android:id="@+id/textView8"-->
+<!--                        style="@style/Base.Widget.AppCompat.TextView.TextSec"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="Finish Profile"-->
+<!--                        android:textSize="16sp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                    <TextView-->
+<!--                        style="@style/Base.Widget.AppCompat.TextView.TextSec"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="1 left"-->
+<!--                        android:textSize="15sp"-->
+<!--                        android:textStyle="bold" />-->
+
+<!--                </LinearLayout>-->
+
+<!--                <HorizontalScrollView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:scrollbars="none"-->
+<!--                    android:overScrollMode="never">-->
+
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content">-->
+
+<!--                        <com.harsh.threads.clone.views.ProfileTaskView-->
+<!--                            android:layout_width="180dp"-->
+<!--                            android:layout_height="210dp"-->
+<!--                            app:title="Create Thread"-->
+<!--                            app:description="Say what's on your mind or share a recent highlight."-->
+<!--                            app:buttonTitle="Create"-->
+<!--                            app:imageSrc="@drawable/linear_edit"/>-->
+
+<!--                        <com.harsh.threads.clone.views.ProfileTaskView-->
+<!--                            android:layout_width="180dp"-->
+<!--                            android:layout_height="210dp"-->
+<!--                            android:layout_marginStart="12dp"-->
+<!--                            app:title="Add profile photo"-->
+<!--                            app:description="Make it easier for people to recognize you."-->
+<!--                            app:buttonTitle="Add"-->
+<!--                            app:imageSrc="@drawable/person_24px"/>-->
+
+<!--                        <com.harsh.threads.clone.views.ProfileTaskView-->
+<!--                            android:layout_width="180dp"-->
+<!--                            android:layout_height="210dp"-->
+<!--                            android:layout_marginStart="12dp"-->
+<!--                            app:title="Add bio"-->
+<!--                            app:description="Introduce yourself and tell people what you're into."-->
+<!--                            app:buttonTitle="Add"-->
+<!--                            app:imageSrc="@drawable/linear_edit"/>-->
+
+<!--                        <com.harsh.threads.clone.views.ProfileTaskView-->
+<!--                            android:layout_width="180dp"-->
+<!--                            android:layout_height="210dp"-->
+<!--                            android:layout_marginStart="12dp"-->
+<!--                            app:title="Follow 5 profiles"-->
+<!--                            app:description="Fill the feed with threads that interest you."-->
+<!--                            app:buttonTitle="Follow"-->
+<!--                            app:imageSrc="@drawable/person_add_24"/>-->
+
+<!--                    </LinearLayout>-->
+
+<!--                </HorizontalScrollView>-->
+
+<!--            </LinearLayout>-->
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/divider"
+                app:layout_constraintVertical_weight="1"
+                android:overScrollMode="never"
+                android:scrollbars="none"/>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
